@@ -1,0 +1,15 @@
+{
+  "contractName": "hello_world_dapp",
+  "entrypoints": {
+    "receive": {
+      "error": "FQIAAAALAAAAUGFyc2VQYXJhbXMCCwAAAEN1c3RvbUVycm9yAg==",
+      "parameter": "AQ=="
+    },
+    "view": {
+      "returnValue": "FAABAAAAEgAAAGN1c3RvbV9zdGF0ZV9maWVsZAY="
+    }
+  },
+  "init": {
+    "parameter": "FAABAAAAAwAAAG51bQY="
+  }
+}

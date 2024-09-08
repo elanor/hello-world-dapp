@@ -1,0 +1,14 @@
+{
+  "contractName": "hello_world",
+  "entrypoints": {
+    "get_message": {
+      "returnValue": "FgI="
+    },
+    "update_message": {
+      "parameter": "AA=="
+    }
+  },
+  "init": {
+    "parameter": "AA=="
+  }
+}

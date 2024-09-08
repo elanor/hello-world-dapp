@@ -1,0 +1,1 @@
+/Users/melajus/Documents/Side_projects/HelloWorld/hello-world-dapp/target/concordium/wasm32-unknown-unknown/release/libhello_world_dapp.rlib: /Users/melajus/Documents/Side_projects/HelloWorld/hello-world-dapp/src/lib.rs
