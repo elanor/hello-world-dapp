@@ -19,10 +19,6 @@
 //! - The `update_message` method can be called by users to change the message stored in the contract.
 //! - The `get_message` method can be used to view the current message without altering the state.
 //!
-//! ## Example
-//! This contract could be extended to include more interactive features or to serve as a template for more complex
-//! applications that require state management and user interaction through transactions.
-//!
 //! ## Developer Notes
 //! - This contract is intended for educational purposes and to demonstrate the capabilities of smart contract
 //!   development on Concordium.
