@@ -20,28 +20,33 @@ For Ethereum or Solana developers, the onboarding may be different. Follow these
 
 1. Rust
     - If you do not have Rust for Unix, Linux or MacOS, open the terminal and use the command 
+
     ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
 
     Get the latest version using command
+
     ```rustup update```
 
     If you are using Windows, download and run `rustup-init.exe` and then follow onscreen instructions.
 
-    After the installation, you will have 3 tools:
-    1. `rustc` - the Rust compiler
-    2. `rustup` - the tool for updating your Rust tools, including the Rust compiler
-    3. `cargo` - a package manager for Rust. It is the one you will use most frequently.
+    - After the installation, you will have 3 tools:
+        1. `rustc` - the Rust compiler
+        2. `rustup` - the tool for updating your Rust tools, including the Rust compiler
+        3. `cargo` - a package manager for Rust. It is the one you will use most frequently.
 
-    The on-chain language for Concordium smart contracts is Web Assembly (Wasm). Therefore you also need to install the Wasm target, which is used to compile Rust contracts to Wasm: 
+    - The on-chain language for Concordium smart contracts is Web Assembly (Wasm). Therefore you also need to install the Wasm target, which is used to compile Rust contracts to Wasm: 
+
     ```rustup target add wasm32-unknown-unknown```
 
 2. Cargo Concordium
 
     `cargo-concordium` is a tool for developing smart contracts for the Concordium blockchain. It can be used for compiling and testing smart contracts, and enables features such as building contract schemas.
+
 	```cargo install --locked cargo-concordium```
 
     To see all the subcommands available, run:
-    `cargo concordium --help`
+    
+    ```cargo concordium --help```
 
     **Note:** To use verifiable builds with cargo-concordium a container runtime such as Docker is required.
 
