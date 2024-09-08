@@ -19,7 +19,7 @@ For Ethereum or Solana developers, the onboarding may be different. Follow these
 ### The tools needed:
 
 1. Rust
-    If you do not have Rust for Unix, Linux or MacOS, open the terminal and use the command 
+    - If you do not have Rust for Unix, Linux or MacOS, open the terminal and use the command 
     ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
 
     Get the latest version using command
@@ -27,19 +27,29 @@ For Ethereum or Solana developers, the onboarding may be different. Follow these
 
     If you are using Windows, download and run `rustup-init.exe` and then follow onscreen instructions.
 
-    When you install `rustup`, you’ll also get the latest stable version of the Rust build tool and package manager, also known as `Cargo`.
+    After the installation, you will have 3 tools:
+    1. `rustc` - the Rust compiler
+    2. `rustup` - the tool for updating your Rust tools, including the Rust compiler
+    3. `cargo` - a package manager for Rust. It is the one you will use most frequently.
 
-    Install the extension to your IDE (for VS Code users: [Rust-analyser](https://code.visualstudio.com/docs/languages/rust) )
+    The on-chain language for Concordium smart contracts is Web Assembly (Wasm). Therefore you also need to install the Wasm target, which is used to compile Rust contracts to Wasm: 
+    ```rustup target add wasm32-unknown-unknown```
 
 2. Cargo Concordium
 
-	```cargo install cargo-concordium```
+    `cargo-concordium` is a tool for developing smart contracts for the Concordium blockchain. It can be used for compiling and testing smart contracts, and enables features such as building contract schemas.
+	```cargo install --locked cargo-concordium```
 
+    To see all the subcommands available, run:
+    `cargo concordium --help`
 
+    **Note:** To use verifiable builds with cargo-concordium a container runtime such as Docker is required.
 
-3. Installing Concordium Client
+3. Concordium Client
 
-    Download the dev documentation at https://developer.concordium.software/en/mainnet/net/installation/downloads.html
+    Concordium Client is a command line client for interacting with the concordium nodes, including sending the transactions.
+
+    - Download the tool from the the developer documentation at https://developer.concordium.software/en/mainnet/net/installation/downloads.html
 
     ```mv concordium-client_6.1.0 /usr/local/bin/concordium-client```
 
