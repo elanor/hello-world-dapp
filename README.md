@@ -45,7 +45,7 @@ For Ethereum or Solana developers, the onboarding may be different. Follow these
 	```cargo install --locked cargo-concordium```
 
     To see all the subcommands available, run:
-    
+
     ```cargo concordium --help```
 
     **Note:** To use verifiable builds with cargo-concordium a container runtime such as Docker is required.
@@ -54,33 +54,65 @@ For Ethereum or Solana developers, the onboarding may be different. Follow these
 
     Concordium Client is a command line client for interacting with the concordium nodes, including sending the transactions.
 
-    - Download the tool from the the developer documentation at https://developer.concordium.software/en/mainnet/net/installation/downloads.html
+    - Download the tool from the developer documentation [here](https://developer.concordium.software/en/mainnet/net/installation/downloads.html#downloads)
 
     ```mv concordium-client_6.1.0 /usr/local/bin/concordium-client```
 
     ```chmod +x /usr/local/bin/concordium-client```
 
-    ## Info
+    **Note:** The location and the version of concordium client may differ for you. In the first command, release 6.1.0 is used, and in the second command, the version is removed.
 
-    - The smart contracts can be generated from a template, using VS Code extension for Concordium Smart Contracts: `Concordium Smart Contracts`.
-    - Open the command palette (or by pressing `Cmd + Shift + P` on MacOS or `Ctrl + Shift + P` on Windows) and choose `Concordium smart contracts: Initialize a smart contract project`. Then, pick up the folder for the project.
-    - Then choose `default` template (this is enough for the first project). Give it a name and provide a description.
-    - The project created is a regular Cargo Rust project with its dependencies in `Cargo.toml` file and a smart contract `/src/` folder in `lib.rs` file, and with tests in `/tests/tests.rs` file.
-    - A difference with typical Rust projects is that `/deploy-scripts/` folder has scripts to deploy the smart contract into the chain.
-    - Open the command palette again and choose `Concordium smart contracts: Build contract`. It outputs the contract in wasm format and puts in `/concordium-out/` folder.
-    - To test the smart contract, we use the command palette `Concordium smart contracts: Test contract`.
+    - With concordium-client installed, you can use the block-show command to query the newest block via public testnet node:
 
+    ```concordium-client block show --grpc-ip node.testnet.concordium.com```
 
-    # Additional note
+    After that, you are ready to start developing Concordium smart contracts.
 
-    ## Potential improvements 
+## Developing a smart contract
 
-    <!-- write down any friction or improvements you think may be made to the developer experience in a separate note. -->
+- The smart contracts can be generated from a template, using VS Code extension for Concordium Smart Contracts: `Concordium Smart Contracts`.
+- Open the command palette (or by pressing `Cmd + Shift + P` on MacOS or `Ctrl + Shift + P` on Windows) and choose `Concordium smart contracts: Initialize a smart contract project`. Then, pick up the folder for the project.
+- Then choose `default` template (this is enough for the first project). Give it a name and provide a description.
+- The project created is a regular Cargo Rust project with its dependencies in `Cargo.toml` file and a smart contract `/src/` folder in `lib.rs` file, and with tests in `/tests/tests.rs` file.
+- A difference with typical Rust projects is that `/deploy-scripts/` folder has scripts to deploy the smart contract into the chain.
+- Open the command palette again and choose `Concordium smart contracts: Build contract`. It outputs the contract in wasm format and puts in `/concordium-out/` folder.
+- To test the smart contract, we use the command palette `Concordium smart contracts: Test contract`.
 
-    The dapp example used here is a basic smart contract, it could be extended to include more interactive features or to serve as a template for more complex applications that require state management and user interaction through transactions.
+## Making dApp "Hello World"
 
-    ## Disclaimers
+- Modify `lib.rs` file to make it "Hello World" dApp. This example demonstrates how "Hello world" can be implemented with smart
+contracts on Concordium.
 
-    - There is a possibility to make an interaction UI for dapp in order to demonstrate how the smart contract works. It is not covered in the current tutorial, but other [examples of other dapps](https://developer.concordium.software/en/mainnet/net/guides/dapp-examples.html#dapp-examples) have those UIs. 
+### Functionality
+- **Initialization**: When deployed, the smart contract initializes with a default message, "Hello, World!".
+- **Update Message**: Functionality to update the stored message.
+- **Get Message**: It allows querying the current message.
 
-    - In order to implement integrations to Concordium Wallet for Web or Mobile, NPM library [`@concordium/react-components`](https://www.npmjs.com/package/@concordium/react-components) can be used.
+### Methods
+- `contract_init`: Initializes the contract with the default "Hello, World!" message.
+- `update_message`: Updates the message stored in the contract's state to "Hello again, World!".
+- `get_message`: Retrieves the current message from the contract's state.
+
+### Usage
+- The `contract_init` method is called automatically upon deployment, setting the initial message.
+- The `update_message` method can be called by users to change the message stored in the contract.
+- The `get_message` method can be used to view the current message without altering the state.
+
+### Developer Notes
+- This contract is intended for educational purposes and to demonstrate the capabilities of smart contract
+  development on Concordium.
+ - Error handling is simplified in this example. More robust error management would be necessary for production use.
+
+# Additional note
+
+## Potential improvements 
+
+<!-- write down any friction or improvements you think may be made to the developer experience in a separate note. -->
+
+The dapp example used here is a basic smart contract, it could be extended to include more interactive features or to serve as a template for more complex applications that require state management and user interaction through transactions.
+
+## Disclaimers
+
+- There is a possibility to make an interaction UI for dapp in order to demonstrate how the smart contract works. It is not covered in the current tutorial, but other [examples of other dapps](https://developer.concordium.software/en/mainnet/net/guides/dapp-examples.html#dapp-examples) have those UIs. 
+
+- In order to implement integrations to Concordium Wallet for Web or Mobile, NPM library [`@concordium/react-components`](https://www.npmjs.com/package/@concordium/react-components) can be used.
