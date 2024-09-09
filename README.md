@@ -2,17 +2,16 @@
 
 ## Introduction
 
-<!-- write a short tutorial on how to install Concordium and write the first 'Hello World' dApp -->
+This tutorial is intended for blockchain developers to show how to install Concordium and write the first "Hello World" dApp.
 
 ## Why Concordium
 
+Blockchain developers with other networks background may have questions how to start using Concordium, and there sets of frequently asked questions can help them: for [Enthereum](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-ethereum-developers/faq.html) developers, and for [Solana](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-solana-developers/faq.html) developers
 <!-- mention why developers need to use Concordium -->
 
 ## Important to know
 
 <!-- how you can explain a complex project to a developer who is new to Concordium, expecting them to know what blockchain is.  -->
-
-For Ethereum or Solana developers, the onboarding may be different. Follow these FAQs to answer most common questions for [Ethereum](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-ethereum-developers/faq.html) and [Solana](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-solana-developers/faq.html) developers
 
 ## Setting up the environment
 
@@ -80,7 +79,7 @@ For Ethereum or Solana developers, the onboarding may be different. Follow these
 
 ## Making dApp "Hello World"
 
-- Modify `lib.rs` file to make it "Hello World" dApp. This example demonstrates how "Hello world" can be implemented with smart
+- Modify `lib.rs` file from template to make it "Hello World" dApp. This example demonstrates how "Hello world" can be implemented with smart
 contracts on Concordium.
 
 ### Functionality
