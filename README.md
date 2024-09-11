@@ -6,8 +6,17 @@ This tutorial is intended for blockchain developers to show how to install Conco
 
 ## Why Concordium
 
-Blockchain developers with other networks background may have questions how to start using Concordium, and there sets of frequently asked questions can help them: for [Enthereum](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-ethereum-developers/faq.html) developers, and for [Solana](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-solana-developers/faq.html) developers
-<!-- mention why developers need to use Concordium -->
+For blockchain developers exploring new platforms, Concordium offers a range of appealing features. 
+
+- At its core, Concordium is a leader in blockchain innovation, consistently enhancing its technology. With a dedicated `research center` in Denmark, the focus is on improving security and efficiency through technologies like Zero-Knowledge proofs and new consensus mechanisms. These innovations are regularly integrated into the blockchain. 
+
+- Secondly, Concordium also stands out for its commitment to environmental sustainability. It is recognized as one of the most energy-efficient blockchain companies, actively supporting projects that mitigate climate change. This commitment is especially important for developers who prioritize environmental impact in their blockchain applications.
+
+- Thirdly, Concordium specializes in applications that require reliable `identification and secure` financial transactions. The platform is designed to enable the development of apps that prioritize user privacy and functionality. 
+
+- Lastly, becoming part of the Concordium community means access to a growing community and support, including financial incentives through grants. These grants are awarded based on decentralized voting by the foundation's board members, ensuring a democratic and equitable distribution of resources.
+
+For developers transitioning from other networks, Concordium offers specific resources to ease the transition and answer common questions. There are  FAQs available for developers coming from Ethereum and Solana, providing guidance on how to start using Concordium effectively. For Ethereum developers, find out more [here](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-ethereum-developers/faq.html). For those from Solana, access your guide [here](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-solana-developers/faq.html).
 
 ## Important to know
 
@@ -108,7 +117,11 @@ contracts on Concordium.
 
 <!-- write down any friction or improvements you think may be made to the developer experience in a separate note. -->
 
-The dapp example used here is a basic smart contract, it could be extended to include more interactive features or to serve as a template for more complex applications that require state management and user interaction through transactions.
+- The dapp example used here is a basic smart contract, it could be extended to include more interactive features or to serve as a template for more complex applications that require state management and user interaction through transactions.
+
+- A potential use case for this "Hello world" dApp could be the following: retrieving the 'Hello World' text field from the blockchain or send it to another address after authentication.
+
+- Not all smart contracts are designed to be upgradeable, which underscores the importance of considering potential future enhancements during their initial development. Planning for upgrades from the outset allows developers to adapt and expand features without the need to rewrite the entire contract each time complexities increase. This approach not only saves time but also helps in maintaining the continuity and integrity of the smart contract over its lifecycle.
 
 ## Disclaimers
 
