@@ -22,7 +22,7 @@ For developers transitioning from other blockchains, Concordium offers resources
 
 ## Setting up the environment
 
-To set up the environment three tools are required: Rust, Cargo Concordium and Concordium Client.  
+To set up the environment, three tools are required: Rust, Cargo Concordium and Concordium Client.  
 
 1. Installing Rust
     - Rust is the language for smart contract development in Concordium. 
@@ -30,14 +30,14 @@ To set up the environment three tools are required: Rust, Cargo Concordium and C
 
         ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
 
-        For Windows, download and run `rustup-init.exe` and then follow installation instructions
+        For Windows, download and run `rustup-init.exe` and then follow installation instructions.
 
     - Once Rust is installed, the following tools become available:
         1. `rustc` - the Rust compiler
         2. `rustup` - update tool for Rust, including the Rust compiler
         3. `cargo` - a package manager for Rust
 
-    - Concordium smart contracts uses Web Assembly (Wasm) on-chain language. To use the Wasm language install the Wasm target for compiling Rust contracts to Wasm by running command: 
+    - Concordium smart contracts use Web Assembly (Wasm) on-chain language. To use the Wasm language, install the Wasm target for compiling Rust contracts to Wasm, by running command: 
 
         ```rustup target add wasm32-unknown-unknown```
 
@@ -51,7 +51,7 @@ To set up the environment three tools are required: Rust, Cargo Concordium and C
 
     ```cargo concordium --help```
 
-    **Note:** To use verifiable builds with cargo-concordium a container runtime such as Docker is required.
+    **Note:** To use verifiable builds with cargo-concordium, a container runtime such as Docker is required.
 
 3. Installing Concordium Client
 
@@ -79,22 +79,22 @@ A new smart contract project can be created using the Concordium Smart Contracts
 2. Choose `default` template (it is sufficient for the current project). Fill in the project title and description.
     - The created project is a regular Cargo Rust project with dependencies listed in `Cargo.toml`, with smart contract in `/src/lib.rs`, and tests in `/tests/tests.rs`.
 3. The key difference from regular Rust project is `/deploy-scripts/` folder that has scripts to deploy the smart contract to the blockchain.
-4. Open command palette again and choose `Build contract`. It outputs the contract in wasm format and puts it in `/concordium-out/` folder.
+4. Open command palette again and choose `Build contract`. It outputs the contract in Wasm format and puts it in `/concordium-out/` folder.
 5. To test the smart contract, use command palette `Test contract`.
 
 ## Making the "Hello World" dApp
 
-- Modify the Smart Contract: Edit the `lib.rs` file to create a simple smart contract that initializes with the message "Hello, World!" and provides functionality to update and retrieve the message. Few beginner level smart contract tutorials can be found on [`Concordium Academy portal`] https://academy.concordium.software/beginner-level-tutorials.
-- Build and Test the Smart Contract: Once the contract is modified, use the Build Contract and Test Contract options in Visual Studio Code to compile and test the contract.
+- Modify the Smart Contract: Edit the `lib.rs` file to create a simple smart contract that initializes with the message "Hello, World!" and provides functionality to update and retrieve the message. Few beginner level smart contract tutorials can be found on [`Concordium Academy portal`](https://academy.concordium.software/beginner-level-tutorials).
+- Build and Test the Smart Contract: Once the contract is modified, use the `Build Contract` and `Test Contract` options in VS Code to compile and test the contract.
 
-For developers interested in building a frontend for the dApp, advanced tutorials covering frontend integration can be found here: [examples of other dapps](https://developer.concordium.software/en/mainnet/net/guides/dapp-examples.html#dapp-examples).
+For developers interested in building a frontend for the dApp, advanced tutorials covering frontend integration can be found in: [examples of other dApps](https://developer.concordium.software/en/mainnet/net/guides/dapp-examples.html#dapp-examples).
 
 Now "Hello world" dApp on Concordium is ready!
 
 Features of the "Hello world" dApp:
 
 ### Functionality
-- **Initialization**: Upon deployed, the smart contract initializes with the message: "Hello, World!"
+- **Initialization**: When deployed, the smart contract initializes with the message: "Hello, World!"
 - **Update Message**: The contract provides a method to update the stored message
 - **Get Message**: It allows querying the current message
 
@@ -112,10 +112,10 @@ Features of the "Hello world" dApp:
 
 <!-- write down any friction or improvements you think may be made to the developer experience in a separate note. -->
 
-- "Hello world" dapp is a basic smart contract dApp, it can be extended to include interactive features or to serve as a template for complex applications that require state management and user interaction through transactions.
+- "Hello world" dApp is a basic smart contract dApp, it can be extended to include interactive features or to serve as a template for complex applications that require state management and user interaction through transactions.
 
-- In order to implement integrations to Concordium Wallet for Web or Mobile use NPM library [`@concordium/react-components`](https://www.npmjs.com/package/@concordium/react-components).
+- In order to implement integrations to Concordium Wallet for Web or Mobile, use NPM library [`@concordium/react-components`](https://www.npmjs.com/package/@concordium/react-components).
 
 - A potential use case for "Hello world" dApp is retrieving 'Hello World' text field from the blockchain and/or sending it to another address after user authentication.
 
-- Functionality for upgrading smart contract in the "Hello world" dapp could be added. It is a good practice to design smart contracts allowing future upgrades. This approach saves time and helps to maintain the continuity and integrity of the smart contract over its lifecycle.
+- Functionality for upgrading smart contract in the "Hello world" dApp could be added. It is a good practice to design smart contracts allowing future upgrades. This approach saves time and helps to maintain the continuity and integrity of the smart contract over its lifecycle.
