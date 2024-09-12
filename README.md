@@ -8,13 +8,13 @@ This tutorial is designed for blockchain developers who are new to Concordium. I
 
 Concordium offers a range of appealing features for blockchain developers:
 
-- Innovation in Security and Efficiency: Concordium integrates advanced technologies such as Zero-Knowledge proofs and innovative consensus mechanisms, enhancing blockchain security and efficiency. The Concordium Research Center in Denmark continuously develops and incorporates these technologies into the platform.
+- `Innovation in Security and Efficiency`: Concordium integrates advanced technologies such as Zero-Knowledge proofs and innovative consensus mechanisms, enhancing blockchain security and efficiency. The Concordium Research Center in Denmark continuously develops and incorporates these technologies into the platform.
 
-- Environmental Sustainability: Concordium is one of the most energy-efficient blockchain companies, actively supporting projects aimed at mitigating climate change. This makes it a suitable choice for developers seeking to minimize the environmental impact of their blockchain applications.
+- `Environmental Sustainability`: Concordium is one of the most energy-efficient blockchain companies, actively supporting projects aimed at mitigating climate change. This makes it a suitable choice for developers seeking to minimize the environmental impact of their blockchain applications.
 
-- Data Ownership and User Verification: Concordium ensures users retain control over their data through built-in verification and authentication mechanisms, fostering trust while maintaining strong security protocols.
+- `Data Ownership and User Verification`: Concordium ensures users retain control over their data through built-in verification and authentication mechanisms, fostering trust while maintaining strong security protocols.
 
-- Community and Support: Concordium offers access to a growing community of developers and provides support through grants awarded via decentralized voting, ensuring fair and equitable distribution of resources.
+- `Community and Support`: Concordium offers access to a growing community of developers and provides support through grants awarded via decentralized voting, ensuring fair and equitable distribution of resources.
 
 For developers transitioning from other blockchains, Concordium offers resources to facilitate the transition from platforms such as [Ethereum](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-ethereum-developers/faq.html) and [Solana](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-solana-developers/faq.html).
 
