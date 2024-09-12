@@ -2,55 +2,48 @@
 
 ## Introduction
 
-This tutorial is intended for blockchain developers to show how to install Concordium and write the first "Hello World" dApp.
+This tutorial is designed for blockchain developers who are new to Concordium. It guides through the process of setting up the Concordium development environment and creating a "Hello World" decentralized application (dApp) on the Concordium blockchain.
 
 ## Why Concordium
 
-For blockchain developers exploring new platforms, Concordium offers a range of appealing features. 
+Concordium offers a range of appealing features for blockchain developers:
 
-- At its core, Concordium is a leader in blockchain innovation, consistently enhancing its technology. With a dedicated `research center` in Denmark, the focus is on improving security and efficiency through technologies like Zero-Knowledge proofs and new consensus mechanisms. These innovations are regularly integrated into the blockchain. 
+- Innovation in Security and Efficiency: Concordium integrates advanced technologies such as Zero-Knowledge proofs and innovative consensus mechanisms, enhancing blockchain security and efficiency. The Concordium Research Center in Denmark continuously develops and incorporates these technologies into the platform.
 
-- Secondly, Concordium also stands out for its `commitment to environmental` sustainability. It is recognized as one of the most energy-efficient blockchain companies, actively supporting projects that mitigate climate change. This commitment is especially important for developers who prioritize environmental impact in their blockchain applications.
+- Environmental Sustainability: Concordium is one of the most energy-efficient blockchain companies, actively supporting projects aimed at mitigating climate change. This makes it a suitable choice for developers seeking to minimize the environmental impact of their blockchain applications.
 
-- Thirdly, Concordium specializes in applications that require reliable `identification and secure` financial transactions. The platform is designed to enable the development of apps that prioritize user privacy and functionality. 
+- Data Ownership and User Verification: Concordium ensures users retain control over their data through built-in verification and authentication mechanisms, fostering trust while maintaining strong security protocols.
 
-- Lastly, becoming part of the Concordium community means access to a `growing community and support`, including financial incentives through grants. These grants are awarded based on decentralized voting by the foundation's board members, ensuring a democratic and equitable distribution of resources.
+- Community and Support: Concordium offers access to a growing community of developers and provides support through grants awarded via decentralized voting, ensuring fair and equitable distribution of resources.
 
-For developers transitioning from other networks, Concordium offers specific resources to ease the transition and answer common questions. There are  FAQs available for developers coming from Ethereum and Solana, providing guidance on how to start using Concordium effectively. For Ethereum developers, find out more [here](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-ethereum-developers/faq.html). For those from Solana, access your guide [here](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-solana-developers/faq.html).
-
-## Important to know
+For developers transitioning from other blockchains, Concordium offers resources to facilitate the transition from platforms such as [Ethereum](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-ethereum-developers/faq.html) and [Solana](https://developer.concordium.software/en/mainnet/smart-contracts/onboarding-guide-solana-developers/faq.html).
 
 <!-- how you can explain a complex project to a developer who is new to Concordium, expecting them to know what blockchain is.  -->
 
 ## Setting up the environment
 
-The set of tools is needed to set the environment correctly.
+To set up the environment three tools are required: Rust, Cargo Concordium and Concordium Client.  
 
-### The tools
-
-1. Rust
-    - If you do not have Rust for Unix, Linux or MacOS, open the terminal and use the command 
+1. Installing Rust
+    - Rust is the language for smart contract development in Concordium. 
+        For Unix-based systems (Linux/MacOS), the following command installs Rust:
 
         ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
 
-        Get the latest version using command
+        For Windows, download and run `rustup-init.exe` and then follow installation instructions
 
-        ```rustup update```
-
-        If you are using Windows, download and run `rustup-init.exe` and then follow onscreen instructions.
-
-    - After the installation, you will have 3 tools:
+    - Once Rust is installed, the following tools become available:
         1. `rustc` - the Rust compiler
-        2. `rustup` - the tool for updating your Rust tools, including the Rust compiler
-        3. `cargo` - a package manager for Rust. It is the one you will use most frequently.
+        2. `rustup` - update tool for Rust, including the Rust compiler
+        3. `cargo` - a package manager for Rust
 
-    - The on-chain language for Concordium smart contracts is Web Assembly (Wasm). Therefore you also need to install the Wasm target, which is used to compile Rust contracts to Wasm: 
+    - Concordium smart contracts uses Web Assembly (Wasm) on-chain language. To use the Wasm language install the Wasm target for compiling Rust contracts to Wasm by running command: 
 
         ```rustup target add wasm32-unknown-unknown```
 
-2. Cargo Concordium
+2. Installing Cargo Concordium
 
-    `cargo-concordium` is a tool for developing smart contracts for the Concordium blockchain. It can be used for compiling and testing smart contracts, and enables features such as building contract schemas.
+    `cargo-concordium` is a tool for developing smart contracts for Concordium blockchain. It is used for compiling and testing smart contracts, and enables features such as building contract schemas. For Cargo Concordium installation use command
 
 	```cargo install --locked cargo-concordium```
 
@@ -60,76 +53,69 @@ The set of tools is needed to set the environment correctly.
 
     **Note:** To use verifiable builds with cargo-concordium a container runtime such as Docker is required.
 
-3. Concordium Client
+3. Installing Concordium Client
 
-    Concordium Client is a command line client for interacting with the concordium nodes, including sending the transactions.
+    Concordium Client is a command-line client for interacting with Concordium nodes and sending transactions.
 
-    - Download the tool from the developer documentation [here](https://developer.concordium.software/en/mainnet/net/installation/downloads.html#downloads)
+    - Download the tool from the [developer documentation](https://developer.concordium.software/en/mainnet/net/installation/downloads.html#downloads). Once downloaded, the client should be moved to the appropriate directory and its permissions updated:
 
         ```mv concordium-client_6.1.0 /usr/local/bin/concordium-client```
 
         ```chmod +x /usr/local/bin/concordium-client```
 
-        **Note:** The location and the version of concordium client may differ for you. In the first command, release 6.1.0 is used, and in the second command, the version is removed.
+        **Note:** Concordium client version and location may be different. In the first command, release 6.1.0 is used, and in the second command, the version is removed.
 
-    - With concordium-client installed, you can use the block-show command to query the newest block via public testnet node:
+    - To verify Concordium-client installation, use the block-show command to query the newest block via public testnet node by running command:
 
         ```concordium-client block show --grpc-ip node.testnet.concordium.com```
 
-        After that, you are ready to start developing Concordium smart contracts.
+Now the development environment is ready for smart contract development on Concordium.
 
-## Developing a smart contract
+## Creating smart contract from a template
 
-- The smart contracts can be generated from a template, using VS Code extension for Concordium Smart Contracts: `Concordium Smart Contracts`.
-- Open the command palette (or by pressing `Cmd + Shift + P` on MacOS or `Ctrl + Shift + P` on Windows) and choose `Concordium smart contracts: Initialize a smart contract project`. Then, pick up the folder for the project.
-- Then choose `default` template (this is enough for the first project). Give it a name and provide a description.
-- The project created is a regular Cargo Rust project with its dependencies in `Cargo.toml` file and a smart contract `/src/` folder in `lib.rs` file, and with tests in `/tests/tests.rs` file.
-- A difference with typical Rust projects is that `/deploy-scripts/` folder has scripts to deploy the smart contract into the chain.
-- Open the command palette again and choose `Concordium smart contracts: Build contract`. It outputs the contract in wasm format and puts in `/concordium-out/` folder.
-- To test the smart contract, use the command palette `Concordium smart contracts: Test contract`.
+A new smart contract project can be created using the Concordium Smart Contracts extension for Visual Studio Code. The steps are as follows:
 
-## Making dApp "Hello World"
+1. Open the command palette and choose `Initialize a smart contract project`. Then, select the folder for the new project.
+2. Choose `default` template (it is sufficient for the current project). Fill in the project title and description.
+    - The created project is a regular Cargo Rust project with dependencies listed in `Cargo.toml`, with smart contract in `/src/lib.rs`, and tests in `/tests/tests.rs`.
+3. The key difference from regular Rust project is `/deploy-scripts/` folder that has scripts to deploy the smart contract to the blockchain.
+4. Open command palette again and choose `Build contract`. It outputs the contract in wasm format and puts it in `/concordium-out/` folder.
+5. To test the smart contract, use command palette `Test contract`.
 
-- Modify `lib.rs` file from template to make it "Hello World" dApp. This example demonstrates how "Hello world" can be implemented with smart
-contracts on Concordium.
-- Build and then test the smart contract.
+## Making the "Hello World" dApp
 
-The example dApp has its features:
+- Modify the Smart Contract: Edit the `lib.rs` file to create a simple smart contract that initializes with the message "Hello, World!" and provides functionality to update and retrieve the message. Few beginner level smart contract tutorials can be found on [`Concordium Academy portal`] https://academy.concordium.software/beginner-level-tutorials.
+- Build and Test the Smart Contract: Once the contract is modified, use the Build Contract and Test Contract options in Visual Studio Code to compile and test the contract.
+
+For developers interested in building a frontend for the dApp, advanced tutorials covering frontend integration can be found here: [examples of other dapps](https://developer.concordium.software/en/mainnet/net/guides/dapp-examples.html#dapp-examples).
+
+Now "Hello world" dApp on Concordium is ready!
+
+Features of the "Hello world" dApp:
 
 ### Functionality
-- **Initialization**: When deployed, the smart contract initializes with a default message, "Hello, World!".
-- **Update Message**: Functionality to update the stored message.
-- **Get Message**: It allows querying the current message.
+- **Initialization**: Upon deployed, the smart contract initializes with the message: "Hello, World!"
+- **Update Message**: The contract provides a method to update the stored message
+- **Get Message**: It allows querying the current message
 
 ### Methods
-- `contract_init`: Initializes the contract with the default "Hello, World!" message.
-- `update_message`: Updates the message stored in the contract's state to "Hello again, World!".
-- `get_message`: Retrieves the current message from the contract's state.
-
-### Usage
-- The `contract_init` method is called automatically upon deployment, setting the initial message.
-- The `update_message` method can be called by users to change the message stored in the contract.
-- The `get_message` method can be used to view the current message without altering the state.
+- `contract_init`: Initializes the contract with "Hello, World!" message
+- `update_message`: Updates the message stored in the contract's state to "Hello again, World!"
+- `get_message`: Retrieves the current message from the contract's state
 
 ### Developer Notes
 - This contract is intended for educational purposes and to demonstrate the capabilities of smart contract
   development on Concordium.
-- Error handling is simplified in this example. More robust error management would be necessary for production use.
+- Error handling is simplified in this example. More robust error management is necessary for production.
 
-# Additional note
-
-## Potential improvements 
+# Potential improvements 
 
 <!-- write down any friction or improvements you think may be made to the developer experience in a separate note. -->
 
-- The dapp example used here is a basic smart contract, it could be extended to include more interactive features or to serve as a template for more complex applications that require state management and user interaction through transactions.
+- "Hello world" dapp is a basic smart contract dApp, it can be extended to include interactive features or to serve as a template for complex applications that require state management and user interaction through transactions.
 
-- A potential use case for this "Hello world" dApp could be the following: retrieving the 'Hello World' text field from the blockchain and/or sending it to another address after authentication.
+- In order to implement integrations to Concordium Wallet for Web or Mobile use NPM library [`@concordium/react-components`](https://www.npmjs.com/package/@concordium/react-components).
 
-- Not all smart contracts are designed to be upgradeable, which underscores the importance of considering potential future enhancements during their initial development. Planning for upgrades from the outset allows developers to adapt and expand features without the need to rewrite the entire contract each time complexities increase. This approach not only saves time but also helps in maintaining the continuity and integrity of the smart contract over its lifecycle.
+- A potential use case for "Hello world" dApp is retrieving 'Hello World' text field from the blockchain and/or sending it to another address after user authentication.
 
-## Disclaimers
-
-- There is a possibility to make an interaction frontend part for dapp in order to demonstrate how the smart contract works. It is not covered in the current tutorial, but other [examples of other dapps](https://developer.concordium.software/en/mainnet/net/guides/dapp-examples.html#dapp-examples) have those UIs. 
-
-- In order to implement integrations to Concordium Wallet for Web or Mobile, NPM library [`@concordium/react-components`](https://www.npmjs.com/package/@concordium/react-components) can be used.
+- Functionality for upgrading smart contract in the "Hello world" dapp could be added. It is a good practice to design smart contracts allowing future upgrades. This approach saves time and helps to maintain the continuity and integrity of the smart contract over its lifecycle.
